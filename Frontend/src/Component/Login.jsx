@@ -48,7 +48,7 @@ const Login = ({ setWorkoutPlan }) => {
     };
 
     try {
-      const response = await fetch("http://localhost:5054/api/chat", {
+      const response = await fetch("https://fitness-app-backend-1xz5.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(finaluserData)
