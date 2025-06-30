@@ -17,10 +17,10 @@ const Exercise = ({exer,bodyPart,setExer,exercise}) => {
        const fetchedata=async()=>{
         let edata=[];
         if(bodyPart==="all"){
-          edata=await fetchData('http://localhost:5054/api/exercises', {})
+          edata=await fetchData('https://fitness-app-backend-1xz5.onrender.com/api/exercises', {})
         }
         else{
-          edata=await fetchData(`http://localhost:5054/api/exercises/bodyPart/${bodyPart}`, {})
+          edata=await fetchData(`https://fitness-app-backend-1xz5.onrender.com/api/exercises/bodyPart/${bodyPart}`, {})
         }
         setExer(edata)
        }
