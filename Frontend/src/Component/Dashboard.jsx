@@ -17,7 +17,7 @@ const Dashboard = () => {
     const fetchCalories = async () => {
       try {
         const response = await fetch(
-           `http://localhost:5054/api/calorie/user/${userId}?range=${viewMode}`
+           `https://fitness-app-backend-1xz5.onrender.com/api/calorie/user/${userId}?range=${viewMode}`
         );
         const result = await response.json(); // [{ day: 'Mon', calories: 120 }, ...]
 console.log("Calories API Result:", result); 
@@ -68,7 +68,7 @@ setData(chartData);
     const fetchWorkoutDays = async () => {
       try {
         
-        const res = await fetch(`http://localhost:5054/api/user/${userId}`); // Replace USER_ID with actual user ID or fetch from auth
+        const res = await fetch(`https://fitness-app-backend-1xz5.onrender.com/api/user/${userId}`); // Replace USER_ID with actual user ID or fetch from auth
         const user = await res.json();
         setWorkoutDays(user.workout_day || []);
       } catch (err) {
