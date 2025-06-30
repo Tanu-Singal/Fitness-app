@@ -57,7 +57,23 @@ app.get('/api/target/:muscle', async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch muscle exercises' });
   }
 });
-
+app.get('/api/exercises/bodyPart/:bodyPart', async (req, res) => {
+  const { bodyPart } = req.params;
+  try {
+    const response = await fetch(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, {
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': process.env.RAPIDAPI_KEY,
+        'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
+      }
+    });
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error("Error fetching exercises by body part:", error);
+    res.status(500).json({ error: 'Failed to fetch exercises by body part' });
+  }
+});
 app.get('/api/equipment/:equip', async (req, res) => {
   const { equip } = req.params;
   try {
