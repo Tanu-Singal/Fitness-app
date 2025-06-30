@@ -16,13 +16,13 @@ const Detail = () => {
   const {id}=useParams();
   useEffect(() => {
     const fetchexerdata = async () => {
-    const exerdetaildata = await fetchData(`http://localhost:5054/api/exercise/${id}`);
+    const exerdetaildata = await fetchData(`https://fitness-app-backend-1xz5.onrender.com/api/exercise/${id}`);
     setexerdetail(exerdetaildata);
 
-    const targetmuscle = await fetchData(`http://localhost:5054/api/target/${exerdetaildata.target}`);
+    const targetmuscle = await fetchData(`https://fitness-app-backend-1xz5.onrender.com/api/target/${exerdetaildata.target}`);
     settargetmuscleexer(targetmuscle);
 
-    const equipmentdata = await fetchData(`http://localhost:5054/api/equipment/${exerdetaildata.equipment}`);
+    const equipmentdata = await fetchData(`https://fitness-app-backend-1xz5.onrender.com/api/equipment/${exerdetaildata.equipment}`);
     setequipmentexer(equipmentdata);
     };
     fetchexerdata();
@@ -33,7 +33,7 @@ const Detail = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await fetch(`http://localhost:5054/api/youtube?query=${exerdetail.name}`);
+      const response = await fetch(`https://fitness-app-backend-1xz5.onrender.com/api/youtube?query=${exerdetail.name}`);
       const data = await response.json();
       setexercisevideo(data.contents || []); // fallback to empty array
     } catch (error) {
