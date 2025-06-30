@@ -9,7 +9,7 @@ const Search = ({bodyPart,setB,setExer}) => {
 useEffect(() => {
   const fetchdata = async () => {
     try {
-      const bodypartdata = await fetchData('http://localhost:5054/api/bodyparts', {});
+      const bodypartdata = await fetchData('https://fitness-app-backend-1xz5.onrender.com/api/bodyparts', {});
       console.log("Fetched bodypartdata:", bodypartdata);
 
       if (Array.isArray(bodypartdata)) {
@@ -32,7 +32,7 @@ useEffect(() => {
     if (values.trim()) {
       try {
         
-        const exercises = await fetchData('http://localhost:5054/api/exercises', {});
+        const exercises = await fetchData('https://fitness-app-backend-1xz5.onrender.com/api/exercises', {});
         const searchQuery = values.toLowerCase();
         console.log("Fetched Exercises:", exercises.length)
         const searchedExercise = exercises.filter((exercise) =>
