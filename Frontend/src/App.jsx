@@ -9,7 +9,7 @@ import Footer from './Component/Footer'
 import Login from './Component/Login'
 
 import Workout from './Page/Workout'
-import Sketch from './Page/sketch'
+import Sketch from './Page/Sketch'
 import Dashboard from './Component/Dashboard'
 const App = () => {
   const [workoutPlan, setWorkoutPlan] = useState("");
